@@ -38,7 +38,7 @@ class LoginScreen extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    "Şifremi Unuttum",
+                    "Şifreni mi unuttun?",
                     style: TextStyle(color: Color(0xffA160FB)),
                   ),
                 ],
