@@ -1,7 +1,6 @@
 import 'package:akorcum/screens/home_screen.dart';
 import 'package:akorcum/widgets/button_widget.dart';
 import 'package:akorcum/widgets/textfield_widget.dart';
-
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
