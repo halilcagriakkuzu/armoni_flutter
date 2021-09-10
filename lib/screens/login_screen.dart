@@ -1,3 +1,4 @@
+import 'package:akorcum/screens/home_screen.dart';
 import 'package:akorcum/widgets/button_widget.dart';
 import 'package:akorcum/widgets/textfield_widget.dart';
 
@@ -10,6 +11,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Stack(
         children: [
@@ -76,9 +78,14 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                ButtonWidget(
-                  title: "Giriş Yap",
-                  hasBorder: false,
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                  },
+                  child: ButtonWidget(
+                    title: "Giriş Yap",
+                    hasBorder: false,
+                  ),
                 ),
                 SizedBox(
                   height: 10,
