@@ -1,6 +1,7 @@
-import 'package:akorcum/screens/home_screen.dart';
-import 'package:akorcum/widgets/button_widget.dart';
-import 'package:akorcum/widgets/textfield_widget.dart';
+import 'package:akorcum/theme.dart';
+import 'package:akorcum/widgets/login_form.dart';
+import 'package:akorcum/widgets/login_option.dart';
+import 'package:akorcum/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -8,95 +9,62 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Container(
-              height: size.height - 400,
-              color: Color(0xffA160FB),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: kDefaultPadding,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 120,
+              ),
+              Text(
+                "Hoş geldin.",
+                style: titleText,
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Row(
                 children: [
-                  Center(
-                    child: Text(
-                      "Armoni Akor",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold),
+                  Text("Uygulamada yeni misin?"),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    "Üye Ol",
+                    style: textButton.copyWith(
+                      decoration: TextDecoration.underline,
+                      decorationThickness: 1,
                     ),
                   ),
-                  Center(
-                      child: Text(
-                    " - Müzik için Herşey - ",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold),
-                  )),
                 ],
-              )),
-          Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                TextFieldWidget(
-                  hintText: 'Email',
-                  obscureText: false,
-                  prefixIconData: Icons.mail_outline,
-                  suffixIconData: Icons.check,
-                  onChanged: () {},
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    TextFieldWidget(
-                      hintText: 'Şifre',
-                      obscureText: true,
-                      prefixIconData: Icons.lock_outline,
-                      suffixIconData: Icons.remove_red_eye_rounded,
-                      onChanged: () {},
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      "Şifreni mi unuttun?",
-                      style: TextStyle(color: Color(0xffA160FB)),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                GestureDetector(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
-                  },
-                  child: ButtonWidget(
-                    title: "Giriş Yap",
-                    hasBorder: false,
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                ButtonWidget(
-                  title: "Kayıt Ol",
-                  hasBorder: true,
-                ),
-              ],
-            ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              LoginForm(),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                "Şifreni mi unuttun?",
+                style: TextStyle(
+                    color: kZambeziColor,
+                    fontSize: 14,
+                    decoration: TextDecoration.underline,
+                    decorationThickness: 1),
+              ),
+              SizedBox(height: 20,),
+              PrimaryButton(buttonText: 'Giriş Yap',),
+              SizedBox(height: 20,),
+              Text("Ya da:",style: subTitle.copyWith(color: kBlackColor,fontSize: 16),),
+              SizedBox(height: 20,),
+              LoginOption(),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

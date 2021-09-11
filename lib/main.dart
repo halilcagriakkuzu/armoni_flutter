@@ -1,4 +1,3 @@
-
 import 'package:akorcum/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,9 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(fontFamily: 'Poppins'),
       home: MyHomePage(),
     );
   }
