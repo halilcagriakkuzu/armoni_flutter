@@ -1,3 +1,4 @@
+import 'package:akorcum/screens/sign_up_screen.dart';
 import 'package:akorcum/theme.dart';
 import 'package:akorcum/widgets/login_form.dart';
 import 'package:akorcum/widgets/login_option.dart';
@@ -32,11 +33,17 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     width: 5,
                   ),
-                  Text(
-                    "Üye Ol",
-                    style: textButton.copyWith(
-                      decoration: TextDecoration.underline,
-                      decorationThickness: 1,
+                  GestureDetector(
+                    onTap: ()
+                    {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScreen()));
+                    },
+                    child: Text(
+                      "Üye Ol",
+                      style: textButton.copyWith(
+                        decoration: TextDecoration.underline,
+                        decorationThickness: 1,
+                      ),
                     ),
                   ),
                 ],

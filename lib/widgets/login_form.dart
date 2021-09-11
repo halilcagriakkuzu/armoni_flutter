@@ -37,7 +37,7 @@ Padding buildInputForm(String label, bool pass) {
         suffixIcon: pass
             ? IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.visibility_off),
+                icon: Icon(Icons.visibility_off),color: kPrimaryColor,
               )
             : null,
       ),

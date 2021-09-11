@@ -1,40 +1,96 @@
+import 'package:akorcum/screens/login_screen.dart';
+import 'package:akorcum/theme.dart';
+import 'package:akorcum/widgets/checkbox.dart';
+import 'package:akorcum/widgets/login_option.dart';
+import 'package:akorcum/widgets/primary_button.dart';
+import 'package:akorcum/widgets/signup_form.dart';
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({ Key? key }) : super(key: key);
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
-          
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Sign Up Screen",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 40),),
-            SizedBox(height: 40,),
-            GestureDetector(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeScreen()));
-                  },
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.7,
-                    height: 50,
-                    decoration: BoxDecoration(
-                        color: Color(0xffA160FB),
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Center(
-                        child: Text(
-                      "Kayıt Oldum",
-                      style: TextStyle(color: Colors.white, fontSize: 15),
-                    )),
+            SizedBox(
+              height: 70,
+            ),
+            Padding(
+              padding: kDefaultPadding,
+              child: Text(
+                "Hesap Oluştur",
+                style: titleText,
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Padding(
+              padding: kDefaultPadding,
+              child: Row(
+                children: [
+                  Text(
+                    "Zaten hesabın var mı?",
+                    style: subTitle,
                   ),
-                ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginScreen()));
+                    },
+                    child: Text(
+                      "Giriş Yap",
+                      style: textButton.copyWith(
+                          decoration: TextDecoration.underline,
+                          decorationThickness: 1),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: kDefaultPadding,
+              child: SignUpForm(),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: kDefaultPadding,
+              child: CheckBox('Kullanıcı sözleşmesini okudum, kabul ediyorum.'),
+            ),
+            SizedBox(height: 20,),
+            Padding(
+              padding: kDefaultPadding,
+              child: PrimaryButton(buttonText: 'Kayıt Ol',),
+            ),
+            SizedBox(height: 20,),
+            Padding(
+              padding:kDefaultPadding,
+              child: Text('Ya da: ',style: subTitle.copyWith(color: kBlackColor),),
+            ),
+            SizedBox(height: 20,),
+            Padding(
+              padding: kDefaultPadding,
+              child: LoginOption(),
+            ),
           ],
         ),
-      )
+      ),
     );
   }
 }
