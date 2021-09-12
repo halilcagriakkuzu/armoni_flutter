@@ -1,4 +1,5 @@
-import 'package:akorcum/widgets/bottom_navigation_bar.dart';
+
+import 'package:akorcum/root_app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MyBottamNavigationBar(),
+      body: RootApp(),
     );
   }
 }
