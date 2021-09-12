@@ -6,8 +6,6 @@ import 'package:akorcum/widgets/primary_button.dart';
 import 'package:akorcum/widgets/signup_form.dart';
 import 'package:flutter/material.dart';
 
-import 'home_screen.dart';
-
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);
 
@@ -73,17 +71,18 @@ class SignUpScreen extends StatelessWidget {
               padding: kDefaultPadding,
               child: CheckBox('Kullanıcı sözleşmesini okudum, kabul ediyorum.'),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Padding(
               padding: kDefaultPadding,
-              child: PrimaryButton(buttonText: 'Kayıt Ol',),
+              child: PrimaryButton(
+                buttonText: 'Kayıt Ol',
+              ),
             ),
-            SizedBox(height: 20,),
-            Padding(
-              padding:kDefaultPadding,
-              child: Text('Ya da: ',style: subTitle.copyWith(color: kBlackColor),),
+            SizedBox(
+              height: 30,
             ),
-            SizedBox(height: 20,),
             Padding(
               padding: kDefaultPadding,
               child: LoginOption(),

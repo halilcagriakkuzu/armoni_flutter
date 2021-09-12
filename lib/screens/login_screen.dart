@@ -1,3 +1,5 @@
+import 'package:akorcum/screens/forget_password.dart';
+import 'package:akorcum/screens/home_screen.dart';
 import 'package:akorcum/screens/sign_up_screen.dart';
 import 'package:akorcum/theme.dart';
 import 'package:akorcum/widgets/login_form.dart';
@@ -34,9 +36,11 @@ class LoginScreen extends StatelessWidget {
                     width: 5,
                   ),
                   GestureDetector(
-                    onTap: ()
-                    {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScreen()));
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignUpScreen()));
                     },
                     child: Text(
                       "Üye Ol",
@@ -55,19 +59,37 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Text(
-                "Şifreni mi unuttun?",
-                style: TextStyle(
-                    color: kZambeziColor,
-                    fontSize: 14,
-                    decoration: TextDecoration.underline,
-                    decorationThickness: 1),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ForgetPassword()));
+                },
+                child: Text(
+                  "Şifreni mi unuttun?",
+                  style: TextStyle(
+                      color: kZambeziColor,
+                      fontSize: 14,
+                      decoration: TextDecoration.underline,
+                      decorationThickness: 1),
+                ),
               ),
-              SizedBox(height: 20,),
-              PrimaryButton(buttonText: 'Giriş Yap',),
-              SizedBox(height: 20,),
-              Text("Ya da:",style: subTitle.copyWith(color: kBlackColor,fontSize: 16),),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                },
+                child: PrimaryButton(
+                  buttonText: 'Giriş Yap',
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
               LoginOption(),
             ],
           ),
