@@ -1,3 +1,4 @@
+import 'package:akorcum/theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -65,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 110,
                             height: 110,
                             decoration: BoxDecoration(
-                                color: Colors.red.shade300,
+                                color:kSecondaryColor,
                                 borderRadius: BorderRadius.circular(15)),
                           ),
                         ),
@@ -133,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 110,
                             height: 110,
                             decoration: BoxDecoration(
-                                color: Colors.red.shade300,
+                                color: kSecondaryColor,
                                 borderRadius: BorderRadius.circular(15)),
                           ),
                         ),
@@ -201,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 110,
                             height: 110,
                             decoration: BoxDecoration(
-                                color: Colors.red.shade300,
+                                color: kSecondaryColor,
                                 borderRadius: BorderRadius.circular(15)),
                           ),
                         ),

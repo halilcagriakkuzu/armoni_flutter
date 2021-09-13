@@ -2,7 +2,6 @@ import 'package:akorcum/screens/home_screen.dart';
 import 'package:akorcum/screens/user_favorite.dart';
 import 'package:akorcum/screens/user_profile.dart';
 import 'package:akorcum/theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class RootApp extends StatefulWidget {
@@ -31,6 +30,8 @@ class _RootAppState extends State<RootApp> {
               labelColor: Colors.orange,
               indicatorColor: Colors.orange,
               unselectedLabelColor: kPrimaryColor,
+              labelStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              unselectedLabelStyle: TextStyle(fontSize: 13),
               tabs: [
                 Tab(
                   icon: Icon(Icons.home),
