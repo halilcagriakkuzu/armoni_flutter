@@ -37,30 +37,46 @@ class _UserProfileState extends State<UserProfile> {
           ),
           Padding(
             padding: kDefaultPadding,
-            child: SecondaryButton(buttonText: 'Şifre Değiştir'),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Padding(
-            padding: kDefaultPadding,
-            child: SecondaryButton(buttonText: 'Akor Gönder'),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Padding(
-            padding: kDefaultPadding,
-            child: SecondaryButton(buttonText: 'Arkadaşını Davet Et'),
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          Padding(
-            padding: kDefaultPadding,
-            child: GestureDetector( onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
-            }, child: PrimaryButton(buttonText: 'Çıkış Yap')),
+            child: Material(
+              borderRadius: BorderRadius.circular(10),
+              elevation: 10,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: kDefaultPadding,
+                    child: SecondaryButton(buttonText: 'Şifre Değiştir'),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: kDefaultPadding,
+                    child: SecondaryButton(buttonText: 'Akor Gönder'),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: kDefaultPadding,
+                    child: SecondaryButton(buttonText: 'Arkadaşını Davet Et'),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Padding(
+                    padding: kDefaultPadding,
+                    child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen()));
+                        },
+                        child: PrimaryButton(buttonText: 'Çıkış Yap')),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),

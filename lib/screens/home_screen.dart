@@ -2,6 +2,7 @@ import 'package:akorcum/theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'artist_detail.dart';
 import 'chord_detail.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -73,10 +74,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(
                           height: 15,
                         ),
-                        Text(
-                          "Şarkıcı Adı",
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ArtistDetail()));
+                          },
+                          child: Text(
+                            "Şarkıcı Adı",
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
                         ),
                         SizedBox(
                           height: 5,

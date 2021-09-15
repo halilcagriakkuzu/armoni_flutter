@@ -1,5 +1,5 @@
+import 'package:akorcum/root_app.dart';
 import 'package:akorcum/screens/forget_password.dart';
-import 'package:akorcum/screens/home_screen.dart';
 import 'package:akorcum/screens/sign_up_screen.dart';
 import 'package:akorcum/theme.dart';
 import 'package:akorcum/widgets/login_form.dart';
@@ -81,7 +81,7 @@ class LoginScreen extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                      MaterialPageRoute(builder: (context) => RootApp()));
                 },
                 child: PrimaryButton(
                   buttonText: 'Giriş Yap',
